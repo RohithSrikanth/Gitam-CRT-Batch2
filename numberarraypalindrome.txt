@@ -1,0 +1,26 @@
+#include <stdio.h>
+int ispalin(int n)
+{
+    int rev=0,t=n;
+    while(n!=0)
+    {
+        rev = rev*10 + (n%10);
+        n/=10;
+    }
+    if(t==rev)
+        return 1;
+    else return 0;
+}
+int main()
+{
+    int n,a[100],s=0;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        if(ispalin(a[i])==1)
+            s++;
+    }
+    printf("%d",s);
+    return 0;
+}
